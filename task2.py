@@ -40,6 +40,7 @@ class Solution:
                     return part_of_srt
         return ''"""
 
+    #Посмотрел другие решения
     def gcdOfStrings(self, str1: str, str2: str) -> str:
         if str1 + str2 != str2 + str1:
             return ""
@@ -50,6 +51,17 @@ class Solution:
             return num2 if num1 % num2 == 0 else gcd(num2, num1 % num2)
 
         return shorter_str[0:gcd(longer_len, shorter_len)]
+
+    #Написал сам
+    def gcdOfStrings(self, str1: str, str2: str) -> str:
+        [shorter_str, longer_str] = [str1, str2] if len(str1) < len(str2) else [str2, str1]
+        shorter_len = len(shorter_str)
+        res = ""
+        for i in range(1, shorter_len + 1):
+            if ((shorter_str[0:i] * (shorter_len // i) == shorter_str) &
+                    (shorter_str[0:i] * (len(longer_str) // i) == longer_str)):
+                res = shorter_str[0:i]
+        return res
 
 
 s = Solution()
