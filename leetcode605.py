@@ -30,15 +30,15 @@ class Solution:
         flowerbed = [0] + flowerbed + [0]
         can_be_planted = 0
         in_a_row_count = 0
-        for i in range(len(flowerbed)):
-            if flowerbed[i] != 0:
+        for idx in flowerbed:
+            if idx != 0:
                 in_a_row_count = 0
             else:
                 in_a_row_count += 1
                 if in_a_row_count == 3:
                     can_be_planted += 1
                     in_a_row_count = 1
-            if can_be_planted >= n:
+            if can_be_planted == n:
                 return True
         return False
 
