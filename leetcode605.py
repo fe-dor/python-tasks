@@ -43,5 +43,6 @@ class Solution:
         return False
 
 
+
 obj = Solution()
 print(obj.canPlaceFlowers([1, 0, 0, 0, 1], 1))
