@@ -30,8 +30,8 @@ class Solution:
         flowerbed = [0] + flowerbed + [0]
         can_be_planted = 0
         in_a_row_count = 0
-        for idx in flowerbed:
-            if idx != 0:
+        for plot in flowerbed:
+            if plot != 0:
                 in_a_row_count = 0
             else:
                 in_a_row_count += 1
